@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="DrawnetLogo.png">
+    <title>Drawnet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            font-family: 'Afacad Flux', sans-serif;
+            color: #fafafa;
+            font-size: 16px; /* Base font size */
+        }
+        #load {
+            transition: opacity 750ms;
+            width: 100%; /* Make logo responsive */
+            max-width: 25em; /* Limit maximum width */
+        }
+        #mainContent {
+            display: none;
+            text-align: left;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLgoFfQS8LhPARuvL1O0Cj0V7XNrWosm3_GvFfja_u__U2cfU3-xjUVY&s=10');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .load-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .logo span {
+            font-weight: bold;
+        }
+        .logo {
+            font-weight: normal;
+            font-size: 2em; /* Adjust font size */
+            padding-left: 10px;
+            color: #000;
+        }
+        .navbar {
+            background-color: #03befc;
+            padding: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .navbar-items {
+            display: none; /* Initially hide navbar items */
+        }
+        .charge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: 20px auto; 
+            flex-grow: 1; 
+            flex-direction: column;
+        }
+        .charge-text {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5rem; /* Scales with base font size */
+        }
+        .charge h2 {
+            text-align: center;
+            font-weight: normal;
+            font-size: 1.2em;
+            padding-top: 10px;
+        }
+        .button {
+            text-decoration: none;
+            font-size: 1.7em; 
+            padding: 12px 20px; /* Increase padding for better touch targets */
+            background: linear-gradient(270deg, transparent 0%, #66e4ff 100%);
+            color: #f1f1f1;
+            border: 2px solid #f1f1f1;
+            outline: 2px solid #03befc;
+            border-radius: 2px;
+            margin-top: 6%;
+            transition: background 0.3s ease;
+        }
+        .footer {
+            text-align: center;
+            background-color: #282928;
+            padding: 15px 0;
+        }
+        .footer h4 {
+            font-weight: normal;
+            font-size: 1em; 
+            padding-top: 10px;
+            color: #f1f1f1;
+        }
+
+        @media (max-width: 768px) {
+          .navbar {
+              flex-direction: column; /* Stack navbar items on smaller screens */
+          }
+
+          .charge-text {
+              font-size: 1.5em; /* Adjust font size */
+          }
+
+          .button {
+              font-size: 1.5em; /* Adjust button size */
+          }
+      }
+
+      @media (max-width: 480px) {
+          .logo {
+              font-size: 1.5em; /* Further adjust logo size */
+          }
+
+          .charge-text {
+              font-size: 1.2em; /* Further adjust charge text size */
+          }
+      }
+    </style>
+</head>
+<body>
+    <div class="load-container">
+        <img id="load" src="DrawnetLogo.png" alt="logo">
+    </div>
+    <div id="mainContent">
+        <nav class="navbar">
+            <h4 class="logo"><span>Draw</span>net</h4>
+         </nav>
+         <div class="charge">
+             <h3 class="charge-text">Create your art masterpiece with this great tool!</h3>
+             <h2>Use the right tool to help you achieve your graphic goal</h2>
+             <a href="drawpad.html" class="button">Get Started</a>
+         </div>
+         <footer class="footer">
+             <p>Drawnet © copyright 2024.</p>
+             <h4>Website as an inspiration from GOD, Jesus my friend, Holy Spirit,love you, and my web community and Chatgpt,more love, my one big dev family.</h4>
+         </footer>
+     </div>
+     <script>
+         var load = document.getElementById('load');
+         var content = document.getElementById('mainContent');
+         var loadcontainer = document.querySelector('.load-container');
+
+         // Show the logo for 1 second and then display the main content
+         setTimeout(() => {
+             load.style.opacity = '0'; // Fade out the logo
+             setTimeout(() => {
+                 load.style.display = 'none'; // Hide the logo
+                 loadcontainer.style.display = 'none'; // Hide the load container
+                 content.style.display = 'flex'; // Change to flex to utilize centering
+             }, 750); // Wait for fade-out transition to finish
+         }, 1000); // Show the logo for 1 second
+
+         function toggleMenu() {
+             const navbarItems = document.querySelector('.navbar-items');
+             navbarItems.style.display = (navbarItems.style.display === 'flex') ? 'none' : 'flex';
+         }
+     </script>
+ </body>
+</html>
